@@ -1,5 +1,8 @@
 using namespace std;
 #include <iostream>
+#include "CrearUsuario.cpp"
+#include "ListarUsuario.cpp"
+#include "EliminarUsuario.cpp"
 
 struct Usuario{
     int id;
@@ -15,18 +18,23 @@ int main() {
     cout << "3. Eliminar usuario " << endl;
     int opcion;
     cin >> opcion;
-    if (opcion == 0) {
-        cout << "Saliendo del programa..." << endl;
-        return 0;
+    switch (opcion) {
+        case 0:
+            cout << "Saliendo del programa..." << endl;
+            break;
+        case 1:
+            cout << "Creando usuario..." << endl;
+            crearUsuario();
+            break;
+        case 2:
+            cout << "Listando usuarios..." << endl;
+            listarUsuarios();
+            break;
+        case 3:
+            cout << "Eliminando usuario..." << endl;
+            eliminarUsuario();
+            break;
+        default:
+            cout << "Opción inválida" << endl;
     }
-    if (opcion == 1) {
-        // Lógica para crear usuario
-    }
-    if (opcion == 2) {
-        // Lógica para listar usuarios
-    }
-    if (opcion == 3) {
-        // Lógica para eliminar usuario
-    }
-    return 0;
 }
