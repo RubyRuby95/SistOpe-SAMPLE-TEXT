@@ -1,13 +1,13 @@
 CXX = g++
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -g -std=c++17
 
-# Regla principal (el objetivo final)
+SRC = main.cpp CrearUsuario.cpp Config.cpp ListarUsuario.cpp EliminarUsuario.cpp
+OBJ = $(SRC:.cpp=.o)
+
 all: programa
 
-# Cómo construir el ejecutable 'programa' a partir de 'main.cpp'
-programa: main.cpp
-	$(CXX) $(CXXFLAGS) -o programa main.cpp
+programa: $(OBJ)
+	$(CXX) $(CXXFLAGS) -o programa $(OBJ)
 
-# Regla para limpiar los archivos generados
 clean:
-	rm -f programa
+	rm -f $(OBJ) programa

@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
 
-void listarUsuarios() {
+void listarUsuario() {
     cout << "ejecutando la función listarUsuarios..." << endl;
 }

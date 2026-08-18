@@ -1,17 +1,14 @@
-using namespace std;
 #include <iostream>
-#include "CrearUsuario.cpp"
-#include "ListarUsuario.cpp"
-#include "EliminarUsuario.cpp"
+#include "CrearUsuario.h"
+#include "ListarUsuario.h"
+#include "EliminarUsuario.h"
 
-struct Usuario{
-    int id;
-    string nombre;
-    string username;
-    string password;
-    string perfil;
-};
+using namespace std;
+
 int main() {
+
+    vector<Usuario> listaUsuarios;
+
     cout << "0. Salir " << endl;
     cout << "1. Crear usuario " << endl;
     cout << "2. Listar usuarios " << endl;
@@ -24,11 +21,11 @@ int main() {
             break;
         case 1:
             cout << "Creando usuario..." << endl;
-            crearUsuario();
+            crearUsuario(listaUsuarios);
             break;
         case 2:
             cout << "Listando usuarios..." << endl;
-            listarUsuarios();
+            listarUsuario();
             break;
         case 3:
             cout << "Eliminando usuario..." << endl;
