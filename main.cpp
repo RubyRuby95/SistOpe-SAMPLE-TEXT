@@ -8,7 +8,17 @@ using namespace std;
 int main() {
     vector<Usuario> listaUsuarios;
     int opcion;
+    string user = "";
+    string password = "";
+    while (user != "admin" && password != "1234") {
+        cout << "Ingrese usuario y contraseña (usuario: admin, contraseña: 1234):" << endl;
+        cout << "user: ";
+        cin >> user;
+        cout << "password: ";
+        cin >> password;
+    }
     do {
+        cout << "\n===== MENÚ =====\n";
         cout << "0. Salir " << endl;
         cout << "1. Crear usuario " << endl;
         cout << "2. Listar usuarios " << endl;
