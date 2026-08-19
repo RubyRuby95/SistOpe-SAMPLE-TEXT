@@ -4,6 +4,6 @@
 #include <vector>
 #include "Usuario.h"
 
-void listarUsuario();
+void listarUsuario(std::vector<Usuario>& listaUsuarios);
 
 #endif
