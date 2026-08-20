@@ -44,12 +44,12 @@ void listarUsuario(vector<Usuario>& listaUsuarios) {
         usuariosCargados = true;
     }
     cout << "\n===== LISTA DE USUARIOS =====\n";
-    cout << "Id\tNombre\t\tPerfil\n";
+    cout << "Id\tNombre\t\tCorreo\t\t\tPerfil\n";
     if (listaUsuarios.empty()) {
         cout << "(No hay usuarios registrados)\n";
     } else {
         for (const Usuario& u : listaUsuarios) {
-            cout << u.id << "\t" << u.nombre << "\t\t" << u.perfil << "\n";
+            cout << u.id << "\t" << u.nombre << "\t\t" << u.username << "\t\t" << u.perfil << "\n";
         }
     }
     cout << "\n1) para Volver : ";

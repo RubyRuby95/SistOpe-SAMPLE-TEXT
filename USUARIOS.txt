@@ -1,3 +1,4 @@
 1;carlo;carlo@gmail.com;1234;GENERAL
 1;pablo;pablo@gmail.com;1234;GENERAL
 2;pablito;plablito@gmail.com;123456;ADMIN
+2;hola;hola@gmail.com;12345;GENERAL
