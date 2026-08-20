@@ -43,7 +43,7 @@ void listarUsuario(vector<Usuario>& listaUsuarios) {
         cargarUsuariosDesdeArchivo(listaUsuarios);
         usuariosCargados = true;
     }
-    cout << "\nLista de usuarios\n";
+    cout << "\n===== LISTA DE USUARIOS =====\n";
     cout << "Id\tNombre\t\tPerfil\n";
     if (listaUsuarios.empty()) {
         cout << "(No hay usuarios registrados)\n";
