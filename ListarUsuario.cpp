@@ -7,7 +7,7 @@
 using namespace std;
 
 static bool usuariosCargados = false;
-static bool cargarUsuariosDesdeArchivo(vector<Usuario>& listaUsuarios) {
+static bool cargarUsuarios(vector<Usuario>& listaUsuarios) {
 
     string nombreArchivo = obtenerVariableEnv("USER_FILE");
     if (nombreArchivo.empty()) {
@@ -40,7 +40,7 @@ static bool cargarUsuariosDesdeArchivo(vector<Usuario>& listaUsuarios) {
 
 void listarUsuario(vector<Usuario>& listaUsuarios) {
     if (!usuariosCargados) {
-        cargarUsuariosDesdeArchivo(listaUsuarios);
+        cargarUsuarios(listaUsuarios);
         usuariosCargados = true;
     }
     cout << "\n===== LISTA DE USUARIOS =====\n";
