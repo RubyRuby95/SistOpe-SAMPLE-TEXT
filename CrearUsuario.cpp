@@ -10,6 +10,54 @@
 
 using namespace std;
 
+int obtenerSiguienteID(const string& nombreArchivo) {
+
+    ifstream archivo(nombreArchivo);
+
+    // Si el archivo no existe o está vacío
+    if (!archivo.is_open()) {
+        return 1;
+    }
+
+    string linea;
+    int mayorID = 0;
+
+    while (getline(archivo, linea)) {
+
+        // Ignorar líneas vacías
+        if (linea.empty()) {
+            continue;
+        }
+
+        // Obtener la primera parte de la línea
+        // Ejemplo:
+        // 5;Pedro Soto;pedro@gmail.com;1234;GENERAL
+
+        size_t posicion = linea.find(';');
+
+        if (posicion == string::npos) {
+            continue;
+        }
+
+        string idTexto = linea.substr(0, posicion);
+
+        try {
+            int id = stoi(idTexto);
+
+            if (id > mayorID) {
+                mayorID = id;
+            }
+
+        } catch (...) {
+            // Si el ID no es un número, ignorar la línea
+        }
+    }
+
+    archivo.close();
+
+    return mayorID + 1;
+}
+
 
 bool emailValido(const string& email) {
     regex formato(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$)");
@@ -23,11 +71,21 @@ void crearUsuario(vector<Usuario>& listaUsuarios) {
 
     Usuario nuevoUsuario;
 
+    // Obtener archivo desde variable de entorno
+    string nombreArchivo = obtenerVariableEnv("USER_FILE");
+
+    if (nombreArchivo.empty()) {
+        cout << "Error: no se encontro la variable USER_FILE.\n";
+        return;
+    }
+
+    // Generar ID automáticamente
+    nuevoUsuario.id = obtenerSiguienteID(nombreArchivo);
+
     cout << "\n===== CREAR USUARIO =====\n";
 
     // ID
-    cout << "Ingrese ID: ";
-    cin >> nuevoUsuario.id;
+    cout << "ID: " << nuevoUsuario.id << "\n";
 
     cin.ignore();
 
@@ -55,6 +113,16 @@ void crearUsuario(vector<Usuario>& listaUsuarios) {
         cout << "Ingrese perfil (GENERAL / ADMIN): ";
         getline(cin, nuevoUsuario.perfil);
 
+        // Convertir el perfil ingresado a mayusculas
+        transform(
+            nuevoUsuario.perfil.begin(),
+            nuevoUsuario.perfil.end(),
+            nuevoUsuario.perfil.begin(),
+            [](unsigned char c) {
+                return toupper(c);
+            }
+        );
+
         if (nuevoUsuario.perfil != "GENERAL" &&
             nuevoUsuario.perfil != "ADMIN") {
 
@@ -62,7 +130,7 @@ void crearUsuario(vector<Usuario>& listaUsuarios) {
         }
 
     } while (nuevoUsuario.perfil != "GENERAL" &&
-             nuevoUsuario.perfil != "ADMIN");
+            nuevoUsuario.perfil != "ADMIN");
 
 
     // Confirmar guardado
@@ -76,17 +144,6 @@ void crearUsuario(vector<Usuario>& listaUsuarios) {
 
 
     if (opcion == 1) {
-
-        // Agregar a la lista en memoria
-        listaUsuarios.push_back(nuevoUsuario);
-
-        // Obtener archivo desde variable de entorno
-        string nombreArchivo = obtenerVariableEnv("USER_FILE");
-
-        if (nombreArchivo.empty()) {
-            cout << "Error: no se encontro la variable USER_FILE.\n";
-            return;
-        }
 
         // Abrir archivo en modo append
         ofstream archivo(nombreArchivo, std::ios::app);
@@ -105,6 +162,8 @@ void crearUsuario(vector<Usuario>& listaUsuarios) {
                 << "\n";
 
         archivo.close();
+        // agregar usuario a la lista en memoria
+        listaUsuarios.push_back(nuevoUsuario);
 
         cout << "\nUsuario guardado correctamente.\n";
 
