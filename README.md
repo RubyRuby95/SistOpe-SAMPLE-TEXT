@@ -5,7 +5,7 @@ Crear el módulo de sistema llamado “Administrador de Usuarios y Perfiles”, 
 <span style="color:orange">2. ¿Como se ejecuta? </span><br>
 Para poder ejecutar SistOpe se debe tener instalado:
   - Lenguaje de programación C/C++
-  - Sistema operativo Linux™ o Windows™
+  - Sistema operativo Linux™ o Windows™ <br>
 Para ejecutar SistOpe se debe abrir una caja de comandos bash en la carpeta donde esté ubicada SistOpe.
 Desde bash compilar el archivo usando <b>make</b><br>
 Se creará un archivo <b>programa</b> que se puede ejecutar desde bash con la linea <b>./programa</b><br>
