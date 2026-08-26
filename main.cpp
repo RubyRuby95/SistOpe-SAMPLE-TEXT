@@ -1,44 +1,80 @@
 #include <iostream>
 #include <vector>
-#include "CrearUsuario.h"
-#include "ListarUsuario.h"
-#include "EliminarUsuario.h"
+#include "FuncionesAdministrador/Headers/CrearUsuario.h"
+#include "FuncionesAdministrador/Headers/ListarUsuario.h"
+#include "FuncionesAdministrador/Headers/EliminarUsuario.h"
+#include "FuncionesAdministrador/Headers/CargarUsuarios.h"
+#include "FuncionesInterfaz/Headers/ComprobarUsuario.h"
+#include "FuncionesInterfaz/Headers/UserManager.h"
+#include "FuncionesAdministrador/Headers/CargarPerfiles.h"
+#include "FuncionesInterfaz/Headers/ProfileManager.h"
 using namespace std;
 
 int main() {
     vector<Usuario> listaUsuarios;
+    vector<Perfil> listaPerfiles;
+    CargarUsuarios(listaUsuarios);
+    CargarPerfiles(listaPerfiles);
+    int idUsuario;
     int opcion;
-    string user = "";
+    
+    
+    /*string user = ""
+    ;
     string password = "";
-    while (user != "admin" && password != "1234") {
-        cout << "Ingrese usuario y contraseña (usuario: admin, contraseña: 1234):" << endl;
-        cout << "user: ";
-        cin >> user;
-        cout << "password: ";
-        cin >> password;
+    
+    int salida;
+    cout << "Entrando al menu de ingreso, desea continuar (0 para no): ";
+    cin >> salida;
+    cout << endl;
+      
+    while (true){
+      
+      if (salida == 0) return 0;
+      cout << "Ingrese usuario y contraseña (usuario: admin, contraseña: 1234):" << endl;
+      cout << "user: ";
+      cin >> user;
+      cout << "password: ";
+      cin >> password;
+      
+      int estado = comprobarUsuario(user, password, listaUsuarios);
+      
+      if (estado == 1) break;
+      if (estado == 2){
+        cout << "Contrasena incorrecta... " << endl;
+      }
+      else{
+        cout << "No se ha encontrado el usuario, desea reintentar (0 para no): ";
+        cin >> salida;
+        cout << endl;
+        if (salida == 0) return 0;
+      }
+      
     }
-    do {
+    
+    idUsuario = buscarUsuario(user, password, listaUsuarios);  
+    */
+    
+    while (true) {
+        
         cout << "\n===== MENÚ =====\n";
-        cout << "0. Salir " << endl;
-        cout << "1. Crear usuario " << endl;
-        cout << "2. Listar usuarios " << endl;
-        cout << "3. Eliminar usuario " << endl;
+        
+        cout << "0. Salir" << endl;        
+        cout << "1. Gestionar Usuarios" << endl;
+        cout << "2. Gestionar Perfiles" << endl;
+        cout << "Opcion: ";
         cin >> opcion;
+        cout << endl;
+        
         switch (opcion) {
             case 0:
                 cout << "Saliendo del programa..." << endl;
-                break;
+                return 0;
             case 1:
-                cout << "Creando usuario..." << endl;
-                crearUsuario(listaUsuarios);
+                UserManager(listaUsuarios, listaPerfiles);
                 break;
             case 2:
-                cout << "Listando usuarios..." << endl;
-                listarUsuario(listaUsuarios);
-                break;
-            case 3:
-                cout << "Eliminando usuario..." << endl;
-                eliminarUsuario();
+                ProfileManager(listaUsuarios, listaPerfiles);
                 break;
             default:
                 cout << "Opción inválida" << endl;
