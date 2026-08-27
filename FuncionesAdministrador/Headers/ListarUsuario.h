@@ -5,6 +5,6 @@
 #include "../../Usuario.h"
 #include "CargarUsuarios.h"
 
-void listarUsuario(std::vector<Usuario>& listaUsuarios);
+void listarUsuario(std::vector<Usuario>& listaUsuarios, bool mostrarOpciones);
 
 #endif

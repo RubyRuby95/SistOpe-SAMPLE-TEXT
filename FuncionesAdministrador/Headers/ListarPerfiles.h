@@ -8,6 +8,6 @@
 #include "../Headers/Config.h"
 #include "CargarPerfiles.h"
 
-void ListarPerfiles(std::vector<Perfil>& listaPerfiles);
+void ListarPerfiles(std::vector<Perfil>& listaPerfiles, bool mostrarFunciones);
 
 #endif

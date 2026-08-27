@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void ListarPerfiles(vector<Perfil>& listaPerfiles) {
+void ListarPerfiles(vector<Perfil>& listaPerfiles, bool mostrarFunciones) {
     if (listaPerfiles.empty()) {
         CargarPerfiles(listaPerfiles);
     }
@@ -19,7 +19,14 @@ void ListarPerfiles(vector<Perfil>& listaPerfiles) {
             cout << p.funciones[p.funciones.size()-1] << "]" << "\n";
         }
     }
-    cout << "\n1) para Volver : ";
-    int opcion;
-    cin >> opcion;
+    while (mostrarFunciones) {
+        cout << "\n1) para Volver : ";
+        int opcion;
+        cin >> opcion;
+        if (opcion == 1) {
+            break;
+            cout << endl;
+        }
+    }
+    
 }

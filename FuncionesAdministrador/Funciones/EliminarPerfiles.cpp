@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "../Headers/ListarPerfiles.h"
 #include "../Headers/Config.h"
 #include "../Headers/EliminarPerfiles.h"
 using namespace std;
@@ -16,6 +16,7 @@ int buscarPerfil(string perfil, vector<Perfil>& listaPerfiles){
 
 
 void eliminarPerfiles(vector<Perfil>& listaPerfiles) {
+    ListarPerfiles(listaPerfiles, false);
     string nombreArchivo = obtenerVariableEnv("PERFIL_FILE");
     if (nombreArchivo.empty()) {
         cout << "Error: no se encontro la variable PERFIL_FILE.\n";
@@ -68,4 +69,5 @@ void eliminarPerfiles(vector<Perfil>& listaPerfiles) {
       cout << "Perfil no existe..." << endl;
     }   
     cout << "ejecutando la función eliminarUsuario..." << endl;
+    cout << endl;
 }

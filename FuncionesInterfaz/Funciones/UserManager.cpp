@@ -34,7 +34,7 @@ void UserManager(vector<Usuario>& listaUsuarios, vector<Perfil>& listaPerfiles){
         crearUsuario(listaUsuarios);
         break;
       case 2:
-        listarUsuario(listaUsuarios);
+        listarUsuario(listaUsuarios, true);
         break;
       case 3:
         eliminarUsuario(listaUsuarios);

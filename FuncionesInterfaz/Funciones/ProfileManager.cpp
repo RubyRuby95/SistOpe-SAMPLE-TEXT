@@ -33,7 +33,7 @@ void ProfileManager(vector<Usuario>& listaUsuarios, vector<Perfil>& listaPerfile
         crearPerfil(listaPerfiles);
         break;
       case 2:
-        ListarPerfiles(listaPerfiles);
+        ListarPerfiles(listaPerfiles, true);
         break;
       case 3:
         eliminarPerfiles(listaPerfiles);

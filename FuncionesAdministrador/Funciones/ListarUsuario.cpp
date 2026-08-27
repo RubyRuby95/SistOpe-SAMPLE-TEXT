@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-void listarUsuario(vector<Usuario>& listaUsuarios) {
+void listarUsuario(vector<Usuario>& listaUsuarios, bool mostrarOpciones) {
     if (listaUsuarios.empty()) {
         CargarUsuarios(listaUsuarios);
     }
@@ -19,7 +19,13 @@ void listarUsuario(vector<Usuario>& listaUsuarios) {
             cout << u.id << "\t" << u.nombre << "\t\t" << u.username << "\t\t" << u.perfil << "\n";
         }
     }
-    cout << "\n1) para Volver : ";
-    int opcion;
-    cin >> opcion;
+    while (mostrarOpciones) {
+        cout << "\n1) para Volver : ";
+        int opcion;
+        cin >> opcion;
+        if (opcion == 1) {
+            cout << endl;
+            break;
+        }
+    }
 }
