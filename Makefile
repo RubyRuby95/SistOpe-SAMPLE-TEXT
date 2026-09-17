@@ -2,6 +2,7 @@ CXX = g++
 # Rutas de los headers
 CXXFLAGS = -Wall -g -std=c++17 -I FuncionesAdministrador/Headers -I FuncionesUsuario/Headers
 
+# Agregamos interpalindromo.cpp y funcion.cpp al final de la lista SRC
 SRC = main.cpp \
       FuncionesAdministrador/Funciones/Config.cpp \
       FuncionesAdministrador/Funciones/CrearUsuario.cpp \
@@ -17,7 +18,11 @@ SRC = main.cpp \
       FuncionesAdministrador/Funciones/ListarPerfiles.cpp \
       FuncionesAdministrador/Funciones/EliminarPerfiles.cpp \
       FuncionesInterfaz/Funciones/Mediario.cpp \
-      FuncionesEntrega2/ConteoTexto.cpp
+      FuncionesEntrega2/ConteoTexto.cpp \
+      FuncionesEntrega2/ConteoArchivo.cpp \
+      FuncionesEntrega2/ConteoUtils.cpp \
+      FuncionesEntrega2/interpalindromo.cpp \
+      FuncionesEntrega2/funcion.cpp
       
 OBJ = $(SRC:.cpp=.o)
 

@@ -4,6 +4,10 @@
 #include <cstring>
 #include "funcionesGenerales.h"
 #include "FuncionesInterfaz/Headers/Mediario.h"
+#include  "FuncionesEntrega2/ConteoTexto.h"
+#include  "FuncionesEntrega2/ConteoArchivo.h"
+#include "FuncionesEntrega2/interpalindromo.h"
+#include "FuncionesEntrega2/funcion.h"
 
 using namespace std;
 
@@ -11,6 +15,7 @@ int main(int argc, char* argv[]) {
     string usuario = "";
     string password = "";
     string archivoFile = "";
+    string perfil = "ADMIN";
 
     for (int i = 1; i < argc; ++i) {
         if (strcmp(argv[i], "-u") == 0 && i + 1 < argc) {
@@ -38,10 +43,11 @@ int main(int argc, char* argv[]) {
         cout << "0. Salir" << endl;
         cout << "1. Gestionar Usuarios/Perfiles" << endl;
         cout << "2. Multiplicar Matrices" << endl;
-        cout << "3. Opcion 3" << endl;
-        cout << "4. Opcion 4" << endl;
-        cout << "5. Opcion 5" << endl;
-        cout << "6. Opcion 6" << endl;
+        cout << "3. Juego" << endl;
+        cout << "4. EsPalindromo" << endl;
+        cout << "5. Funcion" << endl;
+        cout << "6. Conteo sobre texto" << endl;
+        cout << "7. Conteo sobre archivo" << endl;
         
         cout << "Ingrese opcion: ";
         int opcion = verificarNumero();
@@ -75,19 +81,26 @@ int main(int argc, char* argv[]) {
                 }
                 break;
             }
-                
             case 3:
+                cout << "En construccion..." <<endl;
                 break;
                 
             case 4:
+                interpalindromo();
                 break;
                 
             case 5:
+                mainfuncion();
                 break;
                 
             case 6:
+                ConteoSobreTexto(archivoFile, usuario, perfil);
                 break;
                 
+            case 7:
+               ConteoArchivo();
+               break;
+              
             default:
                 cout << "Opcion no valida. Intente de nuevo." << endl;
                 break;
