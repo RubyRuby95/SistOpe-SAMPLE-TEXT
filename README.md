@@ -4,7 +4,10 @@ Creando un sistema que simula como seria la gestion de un sistema operativo impl
 <span style="color:orange"> 2. como se debe ejecutar </span><br>
 Abrir consola y ejecutar:<br>
 Paso 1: Compilar el archivo usando <b>make</b><br>
-Paso 2: Ya se puede ejecutar con <b>./programa</b> <br>
+Paso 2: Ya se puede ejecutar con <b>./programa -u <Usuario> -p <Contraseña> -f <Archivo> </b> <br>
+Ej: ./programa -u lvc -p 1001 -f “/home/lvc/archivo.txt”
+Paso Extra: Al escribir cualquier archivo dentro del programa o ya sea en el paso anterior tiene que tener el siguente formato:
+"home/wdadwa/dwadwa.txt"
 <span style="color:orange"> 3. descripcion de las variables de entorno </span><br>
 <b>USER_FILE</b> -> almacena ruta del archivo USUARIOS.txt <br>
 <b>PERFIL_FILE</b> -> almacena ruta del archivo PERFIL.txt
