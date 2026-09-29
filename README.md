@@ -21,3 +21,21 @@ Paso Extra: Al escribir cualquier archivo dentro del programa o ya sea en el pas
 <span style="color:orange"> 3. descripcion de las variables de entorno </span><br>
 <b>USER_FILE</b> -> almacena ruta del archivo USUARIOS.txt <br>
 <b>PERFIL_FILE</b> -> almacena ruta del archivo PERFIL.txt
+
+<span style="color:orange"> 4. Inicio de sesión y validación de usuarios</span><br>
+
+Al iniciar sesión de la forma explicada anteriormente, el sistema buscará el usuario indicado y verificará su contraseña. En caso de no encontrar al usuario o si la contraseña ingresada no coincide, el programa mostrará un aviso y se cerrará automáticamente. <br>
+
+En caso de no haber usuarios creados en el sistema, existe un Usuario con perfil de administrador y una clave fija diseñado específicamente para acceder y crear nuevos perfiles o usuarios.
+El nombre de usuario de administrador es administrador y la clave es 1234. Este usuario permite crear nuevos perfiles si no se tiene alguno<br>
+
+<span style="color:orange"> 5.1 Gestión de Usuarios/perfiles </span><br>
+Este es el módulo principal encargado de la gestión de usuarios y perfiles. Para acceder a él, es requisito contar con un perfil de administrador. El usuario predeterminado permite ingresar a esta funcionalidad en caso de que aún no existan perfiles creados. <br>
+Esta sección se divide en dos áreas: gestión de usuarios y gestión de perfiles, permitiendo listar, crear y eliminar registros en ambas categorías. La eliminación de usuarios se realiza mediante su ID, mientras que los perfiles se eliminan utilizando el nombre del perfil. Cada vez que se crea o elimina un registro, el sistema edita el archivo correspondiente para añadir o remover la información. <br>
+Para registrar un usuario, el sistema solicita nombre, correo electrónico, contraseña y tipo de perfil. Por el momento, solo es posible asignar los roles "general" o "admin"; esto se modificará en el futuro cuando se requieran distintos perfiles con accesos específicos a diversas funciones. Al crear el usuario, este se almacena en el archivo USUARIOS.txt.
+Para registrar un perfil, se solicita únicamente el nombre del mismo y los números de las funciones a las que tendrá acceso. Dado que actualmente no hay una lista restrictiva de funciones, el sistema acepta cualquier valor numérico y guarda la información en el archivo PERFILES.txt. <br>
+
+
+<span style="color:orange"> 5.2 Multiplicacion de matrices</span><br>
+Este es un programa aparte que se ejecuta en nuestro main y su proposito es multiplicar matrices. <br>
+El programa le pide al usuario 2 rutas a 2 archivos distintos por ejemplo A (que representa la matriz A) y B (que representa la matriz B), estas rutas se piden de la forma "home/carpeta1/carpeta2/A.txt". Los dos archivos deben compartir formato y deben ser matrices cuadradas del mismo tamaño, si no se cumplen estas condiciones el programa fallará. Ademas de esto los numeros de las matrices deben tener un caracter separador que el programa pide al usuario, el programa considerará que el usuario le dio la informacion correcta y con añadirá los numeros a una matriz con vectores a estos vectores y sus valores internos se le aplicará la logica de multiplicación y devolverá el resultado.
