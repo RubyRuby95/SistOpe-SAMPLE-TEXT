@@ -40,3 +40,8 @@ Para registrar un perfil, se solicita únicamente el nombre del mismo y los núm
 <span style="color:orange"> 5.2 Multiplicacion de matrices</span><br>
 Este es un programa aparte que se ejecuta en nuestro main y su proposito es multiplicar matrices. <br>
 El programa le pide al usuario 2 rutas a 2 archivos distintos por ejemplo A (que representa la matriz A) y B (que representa la matriz B), estas rutas se piden de la forma "home/carpeta1/carpeta2/A.txt". Los dos archivos deben compartir formato y deben ser matrices cuadradas del mismo tamaño, si no se cumplen estas condiciones el programa fallará. Ademas de esto los numeros de las matrices deben tener un caracter separador que el programa pide al usuario, el programa considerará que el usuario le dio la informacion correcta y con añadirá los numeros a una matriz con vectores a estos vectores y sus valores internos se le aplicará la logica de multiplicación y devolverá el resultado.
+
+
+<span style="color:orange"> 5.4 Palabra Palíndromo</span><br>
+Es una serie de funciones que le indican al usuario si una palabra ingresada es palíndromo o no.
+Al seleccionar la opción 4 "EsPalindromo", la interfaz le pide al usuario que ingrese una palabra, posteriormente la interfaz consulta al usuario si quiere verificar si la palabra es palíndromo o si quiere cancelar la operación. Si el usuario toma la primera opción, la interfaz llama a una función que hace la verificación a la palabra ingresada por el usuario y, dependiendo del resultado, la interfaz le indica si la palabra es o no palíndromo.
