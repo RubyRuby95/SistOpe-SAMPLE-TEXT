@@ -9,9 +9,9 @@ Paso 1: Compilar el archivo usando <br>
 ```make``` <br>
 Paso 2: Ya se puede ejecutar con <br>
 ```./programa -u <Usuario> -p <Contraseña> -f <Archivo>``` <br>
-Siendo <Usuario> un nombre de usuario guardado en la base de datos, <br>
-Siendo <Contraseña> su respectiva contraseña, <br>
-y siendo <Archivo> la ruta absoluta de un archivo .txt disponible en el computador local: <br>
+Siendo ```<Usuario>``` un nombre de usuario guardado en la base de datos, <br>
+Siendo ```<Contraseña>``` su respectiva contraseña, <br>
+y siendo ```<Archivo>``` la ruta absoluta de un archivo .txt disponible en el computador local: <br>
 en este caso se proyecta usar los archivos disponibles en la carpeta LIBROS. <br>
 La ruta absoluta se puede obtener con: <br>
 ```pwd``` <br>
