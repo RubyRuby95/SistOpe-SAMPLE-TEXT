@@ -49,3 +49,5 @@ Al seleccionar la opción 4 "EsPalindromo", la interfaz le pide al usuario que i
 <span style="color:orange"> 5.4 Calcular función</span><br>
 Primero el programa despliega dos opciones 1 para calcular x en función y 0 para salir, luego de ejecutar 1 el usuario tiene que se le entregar un parametro X, luego en f(x) = x*x + 2x + 8 se evalua x y se retorna el resultado implimiendolo en pantalla, x se permite todo tipo de números reales, por lo cual al ejecutar un caracter o símbolo no númerico envía mensaje de error y dejando volver a ingresar x 
 
+<span style="color:orange"> 5.4 Conteo de Archivos</span><br>
+Permite ingresar la ruta de un archivo de texto y obtener un resumen con la cantidad de vocales, consonantes, caracteres especiales y palabras que contiene. Valida que el archivo exista antes de procesarlo y permite cancelar la operación ingresando 0.
