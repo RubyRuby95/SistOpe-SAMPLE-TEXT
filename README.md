@@ -53,5 +53,8 @@ Al seleccionar la opción 4 "EsPalindromo", la interfaz le pide al usuario que i
 <span style="color:orange"> 5.5 Calcular función</span><br>
 Primero el programa despliega dos opciones 1 para calcular x en función y 0 para salir, luego de ejecutar 1 el usuario tiene que se le entregar un parametro X, luego en f(x) = x*x + 2x + 8 se evalua x y se retorna el resultado implimiendolo en pantalla, x se permite todo tipo de números reales, por lo cual al ejecutar un caracter o símbolo no númerico envía mensaje de error y dejando volver a ingresar x 
 
+<span style="color:orange"> 5.6 Conteo sobre texto</span><br>
+Esta opción cuenta las vocales, consonantes, caracteres especiales y palabras del archivo indicado con el parámetro ```-f``` al ejecutar el programa. Antes de contar, verifica que el archivo exista y se pueda abrir; si no, muestra un mensaje de error. Las vocales y consonantes incluyen letras con tilde y la ñ, los números no se consideran caracteres especiales, y una palabra es cualquier grupo de caracteres separado por espacios que tenga al menos una letra o número. El archivo se lee por bloques, por lo que funciona con libros grandes, y acepta textos en UTF-8 y Latin-1. Para volver al menú se ingresa 0. <br>
+
 <span style="color:orange"> 5.7 Conteo de Archivos</span><br>
 Permite ingresar la ruta de un archivo de texto y obtener un resumen con la cantidad de vocales, consonantes, caracteres especiales y palabras que contiene. Valida que el archivo exista antes de procesarlo y permite cancelar la operación ingresando 0.
