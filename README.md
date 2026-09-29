@@ -46,6 +46,6 @@ El programa le pide al usuario 2 rutas a 2 archivos distintos por ejemplo A (que
 Es una serie de funciones que le indican al usuario si una palabra ingresada es palíndromo o no.
 Al seleccionar la opción 4 "EsPalindromo", la interfaz le pide al usuario que ingrese una palabra, posteriormente la interfaz consulta al usuario si quiere verificar si la palabra es palíndromo o si quiere cancelar la operación. Si el usuario toma la primera opción, la interfaz llama a una función que hace la verificación a la palabra ingresada por el usuario y, dependiendo del resultado, la interfaz le indica si la palabra es o no palíndromo.
 
-<span style="color:orange"> 5.4 Calcular funcion</span><br>
-Primero el programa despliega dos opciones 1 para calcular x en funcion y 0 para salir, luego de ejecutar 1 el usuario tiene que se le entregar un parametro X, luego en f(x) = x*x + 2x + 8 se evalua x y se retorna el resultado implimiendolo en pantalla, x se permite todo tipo de numeros reales, por lo cual al ejecutar un caracter o simbolo no numerico envia mensaje de error y dejando volver a ingresar x 
+<span style="color:orange"> 5.4 Calcular función</span><br>
+Primero el programa despliega dos opciones 1 para calcular x en función y 0 para salir, luego de ejecutar 1 el usuario tiene que se le entregar un parametro X, luego en f(x) = x*x + 2x + 8 se evalua x y se retorna el resultado implimiendolo en pantalla, x se permite todo tipo de números reales, por lo cual al ejecutar un caracter o símbolo no númerico envía mensaje de error y dejando volver a ingresar x 
 
