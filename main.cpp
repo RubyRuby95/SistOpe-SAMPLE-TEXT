@@ -10,7 +10,7 @@
 #include  "FuncionesEntrega2/ConteoArchivo.h"
 #include "FuncionesEntrega2/interpalindromo.h"
 #include "FuncionesEntrega2/funcion.h"
-//#include "FuncionesEntrega3/IndiceInvertido.h"
+#include "FuncionesEntrega3/IndiceInvertido.h"
 #include "FuncionesAdministrador/CargarUsuarios.h"
 
 using namespace std;
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
         cout << "5. Funcion" << endl;
         cout << "6. Conteo sobre texto" << endl;
         cout << "7. Conteo sobre archivo" << endl;
-        //cout << "8. Crear indice invertido" << endl;
+        cout << "8. Crear indice invertido" << endl;
         
         cout << "Ingrese opcion: ";
         int opcion = verificarNumero();
@@ -119,9 +119,10 @@ int main(int argc, char* argv[]) {
                 }
                 break;
             }
-            case 3:
-                cout << "En construccion..." <<endl;
+            case 3:{
+                int resultado = system("./cliente_juego");
                 break;
+            }
                 
             case 4:
                 interpalindromo();
@@ -139,10 +140,9 @@ int main(int argc, char* argv[]) {
                ConteoArchivo();
                break;
 
-            /*case 8:
+            case 8:
                CrearIndiceInvertido();
                break;
-            */
             default:
                 cout << "Opcion no valida. Intente de nuevo." << endl;
                 break;

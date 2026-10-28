@@ -24,6 +24,11 @@ vector<vector<double>> leerMatriz(const string& ruta, char separador) {
         string valorStr;
 
         while (getline(ss, valorStr, separador)) {
+
+            if (valorStr.empty() || valorStr.find_first_not_of(" \t\r\n") == string::npos) {
+                continue; 
+            }
+
             try {
                 double valor = stod(valorStr);
                 fila.push_back(valor);

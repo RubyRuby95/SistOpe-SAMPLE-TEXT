@@ -34,6 +34,13 @@ SRC += FuncionesEntrega3/ConteoPalabras.cpp
 SRC += FuncionesEntrega3/IdentificacionLibros.cpp
 SRC += FuncionesEntrega3/ConstruccionIndice.cpp
 SRC += FuncionesEntrega3/Finalizacion.cpp
+
+# Modulos del companero
+SRC += FuncionesEntrega3/CarpetaLibros.cpp
+SRC += FuncionesEntrega3/ColaTrabajo.cpp
+SRC += FuncionesEntrega3/ThreadsTrabajadores.cpp
+SRC += FuncionesEntrega3/NumeroThreads.cpp
+
 # Modulos del companero (quitar el # cuando entregue sus archivos)
 # SRC += FuncionesEntrega3/CarpetaLibros.cpp
 # SRC += FuncionesEntrega3/ColaTrabajo.cpp
@@ -41,9 +48,10 @@ SRC += FuncionesEntrega3/Finalizacion.cpp
 # SRC += FuncionesEntrega3/NumeroThreads.cpp
 
 
+
 OBJ = $(SRC:.cpp=.o)
 
-all: programa multi
+all: programa multi servidor_juego cliente_juego
 
 programa: $(OBJ)
 	$(CXX) $(CXXFLAGS) -o programa $(OBJ)
@@ -52,5 +60,12 @@ programa: $(OBJ)
 multi: ProgramaMultiMatriz/MultiMatrices.cpp
 	$(CXX) $(CXXFLAGS) ProgramaMultiMatriz/MultiMatrices.cpp -o multi
 
+# Entrega 3: juego multiplayer
+servidor_juego: Juego/ServidorJuego.cpp Juego/Protocolo.h FuncionesAdministrador/Config.cpp
+	$(CXX) $(CXXFLAGS) Juego/ServidorJuego.cpp FuncionesAdministrador/Config.cpp -o servidor_juego
+
+cliente_juego: Juego/ClienteJuego.cpp Juego/Protocolo.h FuncionesAdministrador/Config.cpp
+	$(CXX) $(CXXFLAGS) Juego/ClienteJuego.cpp FuncionesAdministrador/Config.cpp -o cliente_juego
+
 clean:
-	rm -f $(OBJ) programa multi
+	rm -f $(OBJ) programa multi servidor_juego cliente_juego
