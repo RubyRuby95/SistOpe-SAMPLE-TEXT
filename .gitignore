@@ -1,0 +1,10 @@
+# Archivos locales de entorno
+.env
+
+# Archivos generados por Makefile
+*.o
+/programa
+/multi
+
+# Salidas de compilacion y depuracion
+*.out
