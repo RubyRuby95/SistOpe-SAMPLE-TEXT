@@ -28,7 +28,6 @@ SRC = main.cpp \
 # --- Entrega 3: indice invertido (cada modulo = un item del enunciado) ---
 # Mis modulos
 SRC += FuncionesEntrega3/IndiceInvertido.cpp
-SRC += FuncionesEntrega3/Configuracion.cpp
 SRC += FuncionesEntrega3/Semaforos.cpp
 SRC += FuncionesEntrega3/ConteoPalabras.cpp
 SRC += FuncionesEntrega3/IdentificacionLibros.cpp
