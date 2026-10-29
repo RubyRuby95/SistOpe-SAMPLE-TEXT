@@ -1,5 +1,5 @@
 #include "NumeroThreads.h"
-#include "Configuracion.h"
+#include "../FuncionesAdministrador/Config.h"
 #include <cerrno>
 #include <climits>
 #include <cstdlib>
@@ -8,7 +8,7 @@
 using namespace std;
 
 bool leerNThreads(int& cantidad, string& error) {
-  string valor = leerVariable("N_THREADS");
+  string valor = obtenerVariableEnv("N_THREADS");
   if (valor.empty()) {
     error = "Falta N_THREADS en el entorno o en .env.";
     return false;
