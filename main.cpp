@@ -46,22 +46,16 @@ int main(int argc, char* argv[]) {
 
     while (true) {
         size_t indiceUsuario = 0;
-        bool HayNombre;
+
         
        while (indiceUsuario < listaUsuarios.size()){
           if(usuario == listaUsuarios[indiceUsuario].nombre && password == listaUsuarios[indiceUsuario].password) break;  
-          if(usuario == listaUsuarios[indiceUsuario].nombre) HayNombre = true;
           indiceUsuario++;
         }  
         
-        
-        if(indiceUsuario > listaUsuarios.size()-1 && HayNombre){
-          cout << "Contraseña incorrecta..." <<endl;
-          return 0;
-        }
-        if(indiceUsuario > listaUsuarios.size()-1){
-          cout << "No se encontro el usuario..." <<endl;
-          return 0;
+        if(indiceUsuario >= listaUsuarios.size()){
+          cout << "Error, usuario o contraseña incorrectos...";
+          return 1;
         }
         
         cout << "\n--- MENU DE OPCIONES ---" << endl;
