@@ -1,5 +1,6 @@
+
+#include "../FuncionesAdministrador/Config.h"
 #include "CarpetaLibros.h"
-#include "Configuracion.h"
 #include <algorithm>
 #include <cctype>
 #include <filesystem>
@@ -10,7 +11,7 @@ namespace fs = std::filesystem;
 
 bool listarArchivosTxt(vector<string>& rutas, string& error) {
   rutas.clear();
-  string directorio = leerVariable("LIBROS_DIR");
+  string directorio = obtenerVariableEnv("LIBROS_DIR");
   if (directorio.empty()) {
     error = "Falta LIBROS_DIR en el entorno o en .env.";
     return false;
