@@ -412,7 +412,6 @@ Para eventos del servidor el jugador es `SERVIDOR` y el equipo `-`. Ejemplo real
 ├── FuncionesEntrega2/           Palíndromo, función y conteos de texto
 ├── FuncionesEntrega3/           Problema 1: índice invertido
 │   ├── IndiceInvertido.*          Opción de menú: coordina todos los pasos        (1.1)
-│   ├── Configuracion.*            Variables de entorno INDEX_FILE / BOOKS_MAP_FILE (1.2, 3.4)
 │   ├── CarpetaLibros.*            Verificación y listado de la carpeta de libros   (1.3)
 │   ├── ColaTrabajo.*              Cola de trabajo compartida                       (1.4)
 │   ├── ThreadsTrabajadores.*      Creación y ciclo de vida de los threads          (1.5)
