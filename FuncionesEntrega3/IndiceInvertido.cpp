@@ -2,7 +2,7 @@
 #include "../funcionesGenerales.h"      // verificarNumero(): lee un entero validado
 
 // ---- Modulos propios ----
-#include "Configuracion.h"              // 1.2  archivo de salida (INDEX_FILE, BOOKS_MAP_FILE)
+#include "../FuncionesAdministrador/Config.h" // Configuracion compartida para leer .env
 #include "IdentificacionLibros.h"       // 1.9  ID de cada libro
 #include "ConstruccionIndice.h"         // 1.10 indice global
 #include "Finalizacion.h"               // 1.11 termino del procesamiento
@@ -20,9 +20,18 @@ void CrearIndiceInvertido(){
   cout << "\n===== CREAR INDICE INVERTIDO =====" << endl;
   string error;   // aqui cada paso deja el motivo si falla
 
-  // Paso 1 (1.2): leer del entorno el nombre del archivo de salida
-  Configuracion cfg;
-  if (!cargarConfiguracion(cfg, error)){ cout << "[!] " << error << endl; return; }
+  // Paso 1 (1.2 y 1.9): leer las rutas usando el Config compartido del proyecto.
+  // obtenerVariableEnv() carga .env y recupera las variables configuradas.
+  string archivoIndice = obtenerVariableEnv("INDEX_FILE");
+  if (archivoIndice.empty()) {
+    cout << "[!] Falta la variable INDEX_FILE en .env o en el entorno." << endl;
+    return;
+  }
+  string archivoMapa = obtenerVariableEnv("BOOKS_MAP_FILE");
+  if (archivoMapa.empty()) {
+    cout << "[!] Falta la variable BOOKS_MAP_FILE en .env o en el entorno." << endl;
+    return;
+  }
 
   // Paso 2 (1.6, companero): leer y validar N_THREADS
   int nThreads = 0;
@@ -34,12 +43,12 @@ void CrearIndiceInvertido(){
 
   // Paso 4 (1.9): asignar un ID a cada libro y guardar el archivo "ID;nombre"
   vector<Libro> libros = asignarIds(rutas);
-  if (!guardarMapaLibros(cfg.archivoMapa, libros, error)){ cout << "[!] " << error << endl; return; }
+  if (!guardarMapaLibros(archivoMapa, libros, error)){ cout << "[!] " << error << endl; return; }
 
   cout << "Libros encontrados: " << libros.size() << endl;
   cout << "Threads: " << nThreads << endl;
-  cout << "Archivo de indice: " << cfg.archivoIndice << endl;
-  cout << "Archivo de IDs:    " << cfg.archivoMapa << endl << endl;
+  cout << "Archivo de indice: " << archivoIndice << endl;
+  cout << "Archivo de IDs:    " << archivoMapa << endl << endl;
 
   // Paso 5 (1.10 y 1.11): objetos compartidos por todos los threads
   IndiceGlobal indice;               // indice invertido que se va llenando
@@ -54,11 +63,11 @@ void CrearIndiceInvertido(){
     cout << "[!] " << error << " No se genero el indice." << endl;
   }
   // Paso 7 (1.2 y 1.10): escribir el indice en el archivo de INDEX_FILE
-  else if (!indice.guardar(cfg.archivoIndice, error)){
+  else if (!indice.guardar(archivoIndice, error)){
     cout << "[!] " << error << endl;
   }
   else {
-    mostrarResumen(libros, indice, progreso, segundos, cfg.archivoIndice);   // 1.11
+    mostrarResumen(libros, indice, progreso, segundos, archivoIndice);   // 1.11
   }
 
   // Espera a que el usuario vuelva al menu principal
